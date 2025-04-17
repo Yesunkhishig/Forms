@@ -1633,4 +1633,409 @@ strong {
     font-size: 20px;
   }
 }
-  
+/* Notifications Section */
+.notifications-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: var(--section-bg-color); /* #f0f8ff - Хөнгөн цэнхэр дэвсгэр */
+}
+
+.notifications-section .container {
+  max-width: 1140px; /* Bootstrap-ийн стандарт container хэмжээ */
+}
+
+/* Card Styling */
+.notifications-section .card {
+  background-color: var(--white-color); /* #ffffff - Цагаан дэвсгэр */
+  border: none; /* Bootstrap-ийн default border-ийг хассан */
+  border-radius: var(--border-radius-small); /* 10px */
+  margin-bottom: 24px; /* Tooplate-ийн стандарт зай */
+  transition: all 0.3s ease; /* Tooplate-ийн transition эффект */
+}
+
+.notifications-section .card:hover {
+  transform: translateY(-5px); /* Хулганаар хүрэхэд бага зэрэг дээш хөдөлнө */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Зөөлөн сүүдэр */
+}
+
+.notifications-section .card-body {
+  padding: 20px; /* Зураг дээрх padding-тай нийцүүлсэн */
+}
+
+.notifications-section .card-title {
+  font-family: var(--body-font-family); /* Poppins */
+  font-size: var(--h5-font-size); /* 24px */
+  font-weight: var(--font-weight-medium); /* 500 */
+  color: var(--dark-color); /* #000000 */
+  margin-bottom: 10px;
+}
+
+.notifications-section .card-text {
+  font-family: var(--body-font-family); /* Poppins */
+  font-size: var(--p-font-size); /* 16px */
+  font-weight: var(--font-weight-normal); /* 400 */
+  color: var(--p-color); /* #717275 */
+  line-height: 1.6; /* Уншихад хялбар болгох */
+  margin-bottom: 10px;
+}
+
+/* Date and Button Row */
+.notifications-section .card-text.date-row {
+  display: flex;
+  justify-content: space-between; /* Хоёр буланд байрлуулах */
+  align-items: center;
+  margin-bottom: 0; /* Доод зайг хасах */
+}
+
+.notifications-section .card-text .text-muted {
+  font-size: var(--copyright-font-size); /* 14px */
+  color: var(--p-color); /* #717275 */
+}
+
+/* Custom Button for "Уншсан" - Зөвхөн notifications-section дотор */
+.notifications-section .custom-btn {
+  font-family: var(--body-font-family); /* Poppins */
+  font-size: 12px; /* Жижиг хэмжээтэй товч */
+  font-weight: var(--font-weight-medium); /* 500 */
+  background-color: transparent;
+  border: 1px solid var(--custom-btn-bg-color); /* #4f83d1, нимгэн хүрээ */
+  color: var(--custom-btn-bg-color); /* #4f83d1 */
+  border-radius: var(--border-radius-small); /* 10px */
+  padding: 4px 10px; /* Жижиг padding */
+  transition: all 0.3s ease; /* Tooplate-ийн стандарт transition */
+  line-height: normal;
+}
+
+.notifications-section .custom-btn:hover {
+  background-color: var(--custom-btn-bg-hover-color); /* #7cb8eb */
+  border-color: transparent;
+  color: var(--white-color); /* #ffffff */
+}
+
+.notifications-section .custom-btn-bg-white {
+  background-color: var(--white-color); /* #ffffff */
+  border-color: var(--custom-btn-bg-color); /* #4f83d1 */
+  color: var(--custom-btn-bg-color); /* #4f83d1 */
+}
+
+.notifications-section .custom-btn-bg-white:hover {
+  background-color: var(--custom-btn-bg-hover-color); /* #7cb8eb */
+  border-color: transparent;
+  color: var(--white-color); /* #ffffff */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 991px) {
+  .notifications-section {
+    padding-top: 50px;
+    padding-bottom: 80px; /* Tooplate-ийн загварт нийцүүлсэн */
+  }
+
+  .notifications-section .card-title {
+    font-size: var(--h6-font-size); /* 22px */
+  }
+
+  .notifications-section .card-text {
+    font-size: 15px; /* Жижиг дэлгэц дээр уншихад хялбар */
+  }
+
+  .notifications-section .card-text .text-muted {
+    font-size: 13px; /* Жижиг хэмжээ */
+  }
+
+  .notifications-section .custom-btn {
+    font-size: 11px; /* Жижиг дэлгэц дээр товчийг бага зэрэг жижигрүүлнэ */
+    padding: 3px 8px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .notifications-section .card-body {
+    padding: 15px; /* Жижиг дэлгэц дээр padding багасгах */
+  }
+
+  .notifications-section .card-title {
+    font-size: 20px; /* Tooplate-ийн h5-ийн responsive хэмжээтэй нийцүүлсэн */
+  }
+
+  .notifications-section .card-text {
+    font-size: 14px; /* Жижиг дэлгэц дээр уншихад хялбар */
+  }
+
+  .notifications-section .card-text .text-muted {
+    font-size: 12px;
+  }
+
+  .notifications-section .custom-btn {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .notifications-section .card-title {
+    font-size: 18px; /* Tooplate-ийн h6-ийн responsive хэмжээтэй нийцүүлсэн */
+  }
+
+  .notifications-section .card-text {
+    font-size: 13px;
+  }
+
+  .notifications-section .card-text .text-muted {
+    font-size: 11px;
+  }
+
+  .notifications-section .custom-btn {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+}  
+
+
+/* Profile Section */
+.profile-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: var(--section-bg-color); /* #f0f8ff */
+}
+
+.profile-section .container {
+  max-width: 1140px; /* Bootstrap-ийн стандарт container хэмжээ */
+}
+
+/* Card Styling */
+.profile-section .card {
+  background-color: var(--white-color); /* #ffffff */
+  border: none;
+  border-radius: var(--border-radius-small); /* 10px */
+  transition: all 0.3s ease; /* Tooplate-ийн transition эффект */
+}
+
+.profile-section .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section .card-body {
+  padding: 30px;
+}
+
+.profile-section .card-title {
+  font-family: var(--body-font-family); /* Poppins */
+  font-size: var(--h3-font-size); /* 32px */
+  font-weight: var(--font-weight-medium); /* 500 */
+  color: var(--dark-color); /* #000000 */
+}
+
+.profile-section .text-muted {
+  font-size: var(--p-font-size); /* 16px */
+  color: var(--p-color); /* #717275 */
+}
+
+/* Profile Image */
+.profile-section .profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--border-radius-large); /* 100px */
+  object-fit: cover;
+}
+
+/* Profile Details */
+.profile-section .profile-details {
+  font-family: var(--body-font-family); /* Poppins */
+  font-size: var(--p-font-size); /* 16px */
+  color: var(--p-color); /* #717275 */
+}
+
+.profile-section .profile-details strong {
+  color: var(--dark-color); /* #000000 */
+  font-weight: var(--font-weight-medium); /* 500 */
+}
+
+/* History Section */
+.profile-section .history-section {
+  margin-top: 40px;
+}
+
+.profile-section .history-title {
+  font-family: var(--body-font-family); /* Poppins */
+  font-size: var(--h4-font-size); /* 28px */
+  font-weight: var(--font-weight-medium); /* 500 */
+  color: var(--dark-color); /* #000000 */
+}
+
+.profile-section .history-item {
+  background-color: var(--white-color); /* #ffffff */
+  border: none;
+  border-radius: var(--border-radius-small); /* 10px */
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.profile-section .history-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section .history-item .card-body {
+  padding: 20px;
+}
+
+.profile-section .history-item .card-title {
+  font-size: var(--h5-font-size); /* 24px */
+  margin-bottom: 10px;
+}
+
+.profile-section .history-item .card-text {
+  margin-bottom: 10px;
+}
+
+.profile-section .history-item .date-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-section .history-item .text-muted {
+  font-size: var(--copyright-font-size); /* 14px */
+}
+
+/* Custom Button for Profile Section */
+.profile-section .custom-btn {
+  font-family: var(--body-font-family); /* Poppins */
+  font-size: var(--p-font-size); /* 16px */
+  font-weight: var(--font-weight-medium); /* 500 */
+  background-color: var(--custom-btn-bg-color); /* #4f83d1 */
+  border: none; /* Хүрээг хасах */
+  color: var(--white-color); /* #ffffff */
+  border-radius: var(--border-radius-large); /* 100px */
+  padding: 10px 20px;
+  transition: all 0.3s ease; /* Tooplate-ийн стандарт transition */
+}
+
+.profile-section .custom-btn:hover {
+  background-color: var(--custom-btn-bg-hover-color); /* #7cb8eb */
+  color: var(--white-color); /* #ffffff */
+}
+
+/* Remove custom-btn-bg-white effect */
+.profile-section .custom-btn-bg-white {
+  background-color: var(--custom-btn-bg-color); /* #4f83d1 */
+  border: none;
+  color: var(--white-color); /* #ffffff */
+}
+
+.profile-section .custom-btn-bg-white:hover {
+  background-color: var(--custom-btn-bg-hover-color); /* #7cb8eb */
+  color: var(--white-color); /* #ffffff */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 991px) {
+  .profile-section {
+    padding-top: 50px;
+    padding-bottom: 80px;
+  }
+
+  .profile-section .card-title {
+    font-size: var(--h4-font-size); /* 28px */
+  }
+
+  .profile-section .history-title {
+    font-size: var(--h5-font-size); /* 24px */
+  }
+
+  .profile-section .history-item .card-title {
+    font-size: var(--h6-font-size); /* 22px */
+  }
+
+  .profile-section .profile-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .profile-section .custom-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .profile-section .card-body {
+    padding: 20px;
+  }
+
+  .profile-section .card-title {
+    font-size: var(--h5-font-size); /* 24px */
+  }
+
+  .profile-section .history-title {
+    font-size: var(--h6-font-size); /* 22px */
+  }
+
+  .profile-section .history-item .card-body {
+    padding: 15px;
+  }
+
+  .profile-section .profile-details {
+    font-size: 15px;
+  }
+
+  .profile-section .history-item .card-text {
+    font-size: 14px;
+  }
+
+  .profile-section .history-item .text-muted {
+    font-size: 12px;
+  }
+
+  .profile-section .profile-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .profile-section .custom-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profile-section .card-title {
+    font-size: var(--h6-font-size); /* 22px */
+  }
+
+  .profile-section .history-title {
+    font-size: 20px;
+  }
+
+  .profile-section .history-item .card-title {
+    font-size: 18px;
+  }
+
+  .profile-section .profile-details {
+    font-size: 14px;
+  }
+
+  .profile-section .history-item .card-text {
+    font-size: 13px;
+  }
+
+  .profile-section .history-item .text-muted {
+    font-size: 11px;
+  }
+
+  .profile-section .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-section .profile-image {
+    margin-bottom: 15px;
+  }
+
+  .profile-section .custom-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
