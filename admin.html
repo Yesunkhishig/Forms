@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="NumForms Маягт бөглөх">
+    <meta name="description" content="NumForms Мэргэжилтний Хуудас">
     <meta name="author" content="">
-    <title>NumForms - Маягт бөглөх</title>
+    <title>NumForms - Мэргэжилтний Хуудас</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,20 +27,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Нүүр</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Маягт</a>
-                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                            <li><a class="dropdown-item" href="services.html">Өргөдөл</a></li>
-                            <li><a class="dropdown-item" href="coming-soon.html">Маягт</a></li>
-                        </ul>
-                    </li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Ажилчдын хаяг</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">Бидний тухай</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="notification.html">
-                            <i class="bi bi-bell-fill"></i> <span class="badge bg-warning">3</span>
-                        </a>
-                    </li>
                     <li class="nav-item ms-3">
                         <a class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn" href="profile.html">
                             <i class="bi bi-person-fill fs-5"></i>
@@ -57,14 +45,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 col-12">
-                        <h1 class="text-white mb-lg-0">Маягт бөглөх</h1>
+                        <h1 class="text-white mb-lg-0">Мэргэжилтний Хуудас</h1>
                     </div>
                     <div class="col-lg-4 col-12 d-flex justify-content-lg-end align-items-center ms-auto">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb justify-content-center">
                                 <li class="breadcrumb-item"><a href="index.html">Нүүр</a></li>
-                                <li class="breadcrumb-item"><a href="services.html">Маягтууд</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Маягт бөглөх</li>
+                                <li class="breadcrumb-item active" aria-current="page">Мэргэжилтний Хуудас</li>
                             </ol>
                         </nav>
                     </div>
@@ -72,8 +59,17 @@
             </div>
         </section>
 
-        <section class="services-section section-padding">
-            <!-- Маягтын агуулга JavaScript-ээр нэмэгдэнэ -->
+        <section class="admin-section py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-12 mx-auto">
+                        <h3 class="mb-4">Илгээгдсэн Маягтууд</h3>
+                        <div id="submissionList">
+                            <!-- Маягтын жагсаалт энд динамикаар нэмэгдэнэ -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
