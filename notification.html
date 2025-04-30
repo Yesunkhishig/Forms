@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="NumForms - Мэдэгдлийн хуудас">
+    <meta name="description" content="NumForms - Мэдэгдэл">
     <meta name="author" content="">
     <title>NumForms - Мэдэгдэл</title>
 
@@ -14,6 +14,59 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-icons.css" rel="stylesheet">
     <link href="css/tooplate-clean-work.css" rel="stylesheet">
+
+    <style>
+        .notification-card {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            transition: background 0.2s;
+        }
+        .notification-card:hover {
+            background: #e9ecef;
+        }
+        .notification-title {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #333;
+        }
+        .notification-date {
+            font-size: 0.9rem;
+            color: #999;
+        }
+        .notification-section {
+            margin-bottom: 30px;
+        }
+        .notification-section h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #444;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .approve-btn, .reject-btn {
+            padding: 4px 10px;
+            font-size: 0.9rem;
+        }
+        .text-success {
+            color: #28a745 !important;
+        }
+        .text-danger {
+            color: #dc3545 !important;
+        }
+        .comment-section {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .date-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -48,7 +101,7 @@
                         <a class="nav-link" href="about.html">Бидний тухай</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="notification.html">
+                        <a class="nav-link active" href="notification.html">
                             <i class="bi bi-bell-fill"></i> <span class="notificationBadge badge bg-warning">0</span>
                         </a>
                     </li>
@@ -89,8 +142,44 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-12 mx-auto">
-                        <!-- Notifications will be added dynamically -->
-                        <div id="notificationList"></div>
+                        <!-- Оюутны мэдэгдлүүд -->
+                        <div id="studentNotificationList"></div>
+
+                        <!-- Ажилтны хувьд: Шинэ хүсэлтүүд -->
+                        <div class="notification-section" id="staffNewRequests" style="display: none;">
+                            <h4>Шинээр ирсэн хүсэлтүүд</h4>
+                            <div id="newRequestsList"></div>
+                        </div>
+
+                        <!-- Ажилтны хувьд: Бусад мэдэгдлүүд -->
+                        <div class="notification-section" id="staffOtherNotifications" style="display: none;">
+                            <h4>Бусад мэдэгдлүүд</h4>
+                            <div id="staffNotificationList"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comment Modal for Approve/Reject -->
+            <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="commentModalLabel">Тайлбар оруулах</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="commentForm">
+                                <div class="mb-3">
+                                    <label for="commentText" class="form-label">Тайлбар</label>
+                                    <textarea class="form-control" id="commentText" name="comment" rows="3" placeholder="Тайлбараа энд бичнэ үү..."></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Хаах</button>
+                            <button type="button" class="btn btn-primary" id="confirmActionBtn">Хадгалах</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -164,7 +253,7 @@
     <!-- Inline JavaScript for dynamic notifications -->
     <script>
         // Жишээ мэдэгдлийн өгөгдөл (ирээдүйд backend-ээс татна)
-        const notificationsData = [
+        const studentNotifications = [
             {
                 title: "Өргөдөл батлагдлаа",
                 text: "Таны илгээсэн 'Хичээл цуцлах өргөдөл' батлагдсан байна. Дэлгэрэнгүй мэдээллийг имэйлээс шалгана уу.",
@@ -182,9 +271,52 @@
             }
         ];
 
-        // Мэдэгдэл нэмэх функц
-        function addNotification(notification, index) {
-            const notificationList = document.getElementById('notificationList');
+        // Ажилтны шинэ хүсэлтүүд
+        const newRequests = [
+            {
+                title: "Хичээл цуцлах өргөдөл",
+                student: "Золжаргал",
+                studentId: "20B1NUM1234",
+                date: "2025-04-17",
+                status: "Хүлээгдэж байна",
+                attachment: "attachments/request1.pdf"
+            },
+            {
+                title: "Дүнгийн маргаан",
+                student: "Данзандорж",
+                studentId: "20B1NUM5678",
+                date: "2025-04-16",
+                status: "Хүлээгдэж байна",
+                attachment: "attachments/request2.pdf"
+            }
+        ];
+
+        // Ажилтны бусад мэдэгдлүүд
+        const staffNotifications = [
+            {
+                title: "Системийн шинэчлэл амжилттай хийгдлээ",
+                date: "2025-04-14"
+            },
+            {
+                title: "Сургалтын хөтөлбөрийн шинэчлэл зарлагдлаа",
+                date: "2025-04-13"
+            }
+        ];
+
+        // Хэрэглэгчийн төрлийг тодорхойлох функц
+        function determineUserType(email) {
+            const studentPattern = /^[0-9]{2}B1NUM[0-9]{4}@stud\.num\.edu\.mn$/i;
+            if (studentPattern.test(email)) {
+                return "student";
+            } else if (email.includes('@stud.num.edu.mn') && email.includes('.')) {
+                return "staff";
+            }
+            return "unknown";
+        }
+
+        // Оюутны мэдэгдэл нэмэх функц
+        function addStudentNotification(notification, index) {
+            const notificationList = document.getElementById('studentNotificationList');
             const notificationItem = document.createElement('div');
             notificationItem.classList.add('card', 'mb-3', 'shadow-sm');
             notificationItem.setAttribute('data-index', index);
@@ -208,19 +340,163 @@
             });
         }
 
-        // Мэдэгдлийн тоог шинэчлэх функц
-        function updateNotificationCount() {
-            const notificationCount = document.querySelectorAll('.card.mb-3').length;
-            const badge = document.querySelector('.notificationBadge');
-            badge.textContent = notificationCount;
+        // Ажилтны шинэ хүсэлт нэмэх функц
+        function addNewRequest(item, index) {
+            const requestsList = document.getElementById('newRequestsList');
+            const requestItem = document.createElement('div');
+            requestItem.classList.add('notification-card');
+            requestItem.setAttribute('data-index', index);
+            requestItem.innerHTML = `
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="notification-title">${item.student}: ${item.title}</span>
+                        <span class="notification-status ms-2">(${item.status})</span>
+                        <div class="request-student text-muted">${item.student} (${item.studentId})</div>
+                        <a href="${item.attachment}" target="_blank" class="attachment-link small">Хавсралтыг харах</a>
+                    </div>
+                    <div>
+                        <small class="notification-date me-2">${item.date}</small>
+                        <button class="btn btn-sm btn-success approve-btn me-1" onclick="showCommentModal(${index}, 'approve')">Батлах</button>
+                        <button class="btn btn-sm btn-danger reject-btn" onclick="showCommentModal(${index}, 'reject')">Татгалзах</button>
+                    </div>
+                </div>
+                <div class="comment-section mt-2" style="display: none;">
+                    <strong>Тайлбар:</strong>
+                    <p class="comment-text mb-0"></p>
+                </div>
+            `;
+            requestsList.appendChild(requestItem);
         }
 
-        // Хуудас ачааллахдаа мэдэгдлүүдийг нэмэх
+        // Ажилтны бусад мэдэгдэл нэмэх функц
+        function addStaffNotification(item, index) {
+            const notificationList = document.getElementById('staffNotificationList');
+            const notificationItem = document.createElement('div');
+            notificationItem.classList.add('notification-card');
+            notificationItem.setAttribute('data-index', index);
+            notificationItem.innerHTML = `
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="notification-title">${item.title}</span>
+                    </div>
+                    <small class="notification-date">${item.date}</small>
+                </div>
+            `;
+            notificationList.appendChild(notificationItem);
+        }
+
+        // Тайлбарын modal-ыг харуулах функц
+        function showCommentModal(index, action) {
+            const modal = new bootstrap.Modal(document.getElementById('commentModal'));
+            const confirmBtn = document.getElementById('confirmActionBtn');
+            document.getElementById('commentText').value = '';
+
+            confirmBtn.onclick = function() {
+                const comment = document.getElementById('commentText').value;
+                if (action === 'approve') {
+                    approveRequest(index, comment);
+                } else {
+                    rejectRequest(index, comment);
+                }
+                modal.hide();
+            };
+
+            modal.show();
+        }
+
+        // Хүсэлтийг батлах функц
+        function approveRequest(index, comment) {
+            const requestItem = document.querySelector(`#newRequestsList [data-index="${index}"]`);
+            if (requestItem) {
+                const statusSpan = requestItem.querySelector('.notification-status');
+                statusSpan.textContent = "(Батлагдсан)";
+                statusSpan.classList.add('text-success');
+                requestItem.querySelector('.approve-btn').style.display = 'none';
+                requestItem.querySelector('.reject-btn').style.display = 'none';
+
+                const commentSection = requestItem.querySelector('.comment-section');
+                const commentText = requestItem.querySelector('.comment-text');
+                commentText.textContent = comment || "Тайлбар байхгүй";
+                commentSection.style.display = 'block';
+            }
+        }
+
+        // Хүсэлтийг татгалзах функц
+        function rejectRequest(index, comment) {
+            const requestItem = document.querySelector(`#newRequestsList [data-index="${index}"]`);
+            if (requestItem) {
+                const statusSpan = requestItem.querySelector('.notification-status');
+                statusSpan.textContent = "(Татгалзсан)";
+                statusSpan.classList.add('text-danger');
+                requestItem.querySelector('.approve-btn').style.display = 'none';
+                requestItem.querySelector('.reject-btn').style.display = 'none';
+
+                const commentSection = requestItem.querySelector('.comment-section');
+                const commentText = requestItem.querySelector('.comment-text');
+                commentText.textContent = comment || "Тайлбар байхгүй";
+                commentSection.style.display = 'block';
+            }
+        }
+
+        // Мэдэгдлийн тоог шинэчлэх функц
+        function updateNotificationCount(userType) {
+            const notificationBadge = document.querySelector('.notificationBadge');
+            let notificationCount = 0;
+
+            if (userType === "student") {
+                notificationCount = document.querySelectorAll('#studentNotificationList .card.mb-3').length;
+            } else if (userType === "staff") {
+                const newRequestsCount = document.querySelectorAll('#newRequestsList .notification-card').length;
+                const staffNotificationsCount = document.querySelectorAll('#staffNotificationList .notification-card').length;
+                notificationCount = newRequestsCount + staffNotificationsCount;
+            }
+
+            notificationBadge.textContent = notificationCount;
+        }
+
+        // Хэрэглэгчийн мэдээлэл
+        let userProfile = {
+            email: "20b1num1799@stud.num.edu.mn"
+        };
+
+        // Хуудас ачааллахдаа
         document.addEventListener('DOMContentLoaded', function() {
-            notificationsData.forEach((notification, index) => {
-                addNotification(notification, index);
-            });
-            updateNotificationCount();
+            const userType = determineUserType(userProfile.email);
+            console.log("User Type:", userType);
+
+            if (userType === "student") {
+                // Оюутны мэдэгдлүүдийг харуулах
+                document.getElementById('studentNotificationList').style.display = 'block';
+                document.getElementById('staffNewRequests').style.display = 'none';
+                document.getElementById('staffOtherNotifications').style.display = 'none';
+
+                // Огноогоор эрэмбэлэх (хамгийн сүүлийнх дээрээ)
+                studentNotifications.sort((a, b) => new Date(b.date) - new Date(a.date));
+                studentNotifications.forEach((item, index) => {
+                    addStudentNotification(item, index);
+                });
+
+                updateNotificationCount(userType);
+            } else if (userType === "staff") {
+                // Ажилтны мэдэгдлүүдийг харуулах
+                document.getElementById('studentNotificationList').style.display = 'none';
+                document.getElementById('staffNewRequests').style.display = 'block';
+                document.getElementById('staffOtherNotifications').style.display = 'block';
+
+                // Шинэ хүсэлтүүдийг огноогоор эрэмбэлэх
+                newRequests.sort((a, b) => new Date(b.date) - new Date(a.date));
+                newRequests.forEach((item, index) => {
+                    addNewRequest(item, index);
+                });
+
+                // Бусад мэдэгдлүүдийг огноогоор эрэмбэлэх
+                staffNotifications.sort((a, b) => new Date(b.date) - new Date(a.date));
+                staffNotifications.forEach((item, index) => {
+                    addStaffNotification(item, index);
+                });
+
+                updateNotificationCount(userType);
+            }
         });
     </script>
 </body>

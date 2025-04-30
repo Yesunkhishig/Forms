@@ -2085,3 +2085,95 @@ strong {
   font-weight: 700;
   color: #fff;
 }
+.attachment-link {
+  font-size: 0.85rem;
+  color: #007bff;
+  text-decoration: none;
+}
+.attachment-link:hover {
+  text-decoration: underline;
+}
+.comment-section {
+  font-size: 0.9rem;
+  color: #555;
+}
+.history-item, .request-item {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 12px 16px; /* Томруулсан */
+  transition: background 0.2s;
+}
+.history-item:hover, .request-item:hover {
+  background: #e9ecef;
+}
+.history-title-text {
+  font-size: 1.05rem; /* Томруулсан */
+  font-weight: 500;
+  color: #333;
+}
+.history-status {
+  font-size: 0.95rem; /* Томруулсан */
+  color: #666;
+}
+.history-date {
+  font-size: 0.9rem; /* Томруулсан */
+  color: #999;
+}
+.request-student {
+  font-size: 0.9rem; /* Томруулсан */
+  color: #666;
+}
+.approve-btn, .reject-btn {
+  padding: 4px 10px; /* Товчны хэмжээг томруулсан */
+  font-size: 0.9rem; /* Томруулсан */
+}
+.history-item, .request-item {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 12px 16px;
+  transition: background 0.2s;
+}
+.history-item:hover, .request-item:hover {
+  background: #e9ecef;
+}
+.history-title-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #333;
+}
+.history-status {
+  font-size: 0.95rem;
+  color: #666;
+}
+.history-date {
+  font-size: 0.9rem;
+  color: #999;
+}
+.request-student {
+  font-size: 0.9rem;
+  color: #666;
+}
+.approve-btn, .reject-btn {
+  padding: 4px 10px;
+  font-size: 0.9rem;
+}
+.attachment-link {
+  font-size: 0.85rem;
+  color: #007bff;
+  text-decoration: none;
+}
+.attachment-link:hover {
+  text-decoration: underline;
+}
+.comment-section {
+  font-size: 0.9rem;
+  color: #555;
+}
+.text-success {
+  color: #28a745 !important;
+}
+.text-danger {
+  color: #dc3545 !important;
+}

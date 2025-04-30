@@ -3,11 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="NumForms хэрэглэгчийн профайл">
+    <meta name="description" content="NumForms - Хэрэглэгчийн Профайл">
     <meta name="author" content="">
     <title>NumForms - Хэрэглэгчийн Профайл</title>
 
-    <!-- CSS FILES -->
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +14,6 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-icons.css" rel="stylesheet">
     <link href="css/tooplate-clean-work.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -27,29 +25,32 @@
                 <span class="ms-2">NumForms</span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Нүүр</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Нүүр</a>
+                    </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">Маягт</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Маягт</a>
                         <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="services.html">Өргөдөл</a></li>
                             <li><a class="dropdown-item" href="coming-soon.html">Маягт</a></li>
                             <li><a class="dropdown-item" href="page-404.html">Хүсэлт</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Ажилчдын хаяг</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">Бидний тухай</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Ажилчдын хаяг</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Бидний тухай</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="notification.html">
-                            <i class="bi bi-bell-fill"></i> <span class="badge bg-warning">3</span>
+                            <i class="bi bi-bell-fill"></i> <span class="notificationBadge badge bg-warning">0</span>
                         </a>
                     </li>
                     <li class="nav-item ms-3">
@@ -85,103 +86,148 @@
         </section>
 
         <!-- Profile Section -->
-        <!-- Profile Section -->
-<section class="profile-section py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-12 mx-auto">
-                <!-- Хэрэглэгчийн мэдээлэл -->
-                <div class="card shadow-sm mb-5">
-                    <div class="card-body">
-                        <div class="profile-header d-flex align-items-center mb-4">
-                            <img src="images/teams/male1.jpg" class="profile-image me-3" alt="Profile Image">
-                            <div>
-                                <h3 class="card-title mb-1">Бат-Эрдэнэ</h3>
-                                <p class="text-muted mb-0">20b1num1799@stud.num.edu.mn</p>
+        <section class="profile-section py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <!-- Хэрэглэгчийн мэдээлэл -->
+                        <div class="card profile-card shadow-sm mb-5">
+                            <div class="card-body">
+                                <div class="profile-header d-flex align-items-center mb-4">
+                                    <img id="profileImageDisplay" src="images/teams/male1.jpg" class="profile-image me-3" alt="Profile Image">
+                                    <div>
+                                        <h3 id="profileName" class="card-title mb-1">Бат-Эрдэнэ</h3>
+                                        <p id="profileEmail" class="text-muted mb-0">20b1num1799@stud.num.edu.mn</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="profile-details">
+                                    <div class="row mb-3">
+                                        <div class="col-md-4"><strong>Овог:</strong></div>
+                                        <div id="profileLastName" class="col-md-8">Пүрэвсүрэн</div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4"><strong>Утасны дугаар:</strong></div>
+                                        <div id="profilePhone" class="col-md-8">+976 9912-3456</div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4"><strong>Хэрэглэгчийн төрөл:</strong></div>
+                                        <div id="profileUserType" class="col-md-8">Оюутан</div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4"><strong id="idLabel">Оюутны ID:</strong></div>
+                                        <div id="profileId" class="col-md-8">20B1NUM1799</div>
+                                    </div>
+                                    <!-- Оюутны хувьд -->
+                                    <div id="studentFields">
+                                        <div class="row mb-3">
+                                            <div class="col-md-4"><strong>Салбар сургууль:</strong></div>
+                                            <div id="profileSchool" class="col-md-8">МТЭС</div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-md-4"><strong>Хөтөлбөр:</strong></div>
+                                            <div id="profileProgram" class="col-md-8">Мэдээллийн технологи</div>
+                                        </div>
+                                    </div>
+                                    <!-- Ажилтны хувьд -->
+                                    <div id="staffFields" style="display: none;">
+                                        <div class="row mb-3">
+                                            <div class="col-md-4"><strong>Албан тушаал:</strong></div>
+                                            <div id="profilePosition" class="col-md-8">Багш</div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-md-4"><strong>Хэлтэс:</strong></div>
+                                            <div id="profileDepartment" class="col-md-8">Мэдээллийн Технологийн Хэлтэс</div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4"><strong>Бүртгүүлсэн огноо:</strong></div>
+                                        <div id="profileRegDate" class="col-md-8">2025-01-15</div>
+                                    </div>
+                                </div>
+                                <div class="text-end">
+                                    <button type="button" class="btn custom-btn custom-border-btn custom-btn-bg-white" data-bs-toggle="modal" data-bs-target="#editProfileModal">
+                                        Профайлыг засах
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <hr>
-                        <div class="profile-details">
-                            <div class="row mb-3">
-                                <div class="col-md-4"><strong>Овог:</strong></div>
-                                <div class="col-md-8">Пүрэвсүрэн</div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-4"><strong>Утасны дугаар:</strong></div>
-                                <div class="col-md-8">+976 9912-3456</div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-4"><strong>Хэрэглэгчийн төрөл:</strong></div>
-                                <div class="col-md-8">Оюутан</div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-4"><strong>Салбар сургууль:</strong></div>
-                                <div class="col-md-8">МТЭС</div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-4"><strong>Хөтөлбөр:</strong></div>
-                                <div class="col-md-8">Мэдээллийн технологи</div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-4"><strong>Бүртгүүлсэн огноо:</strong></div>
-                                <div class="col-md-8">2025-01-15</div>
-                            </div>
+
+                        <!-- Хэрэглэгчийн түүх (Зөвхөн оюутанд харагдана) -->
+                        <div class="history-section" id="historySection">
+                            <h3 class="history-title mb-4">Таны илгээсэн өргөдөл, маягтууд</h3>
+                            <div id="historyList"></div>
                         </div>
-                        <div class="text-end">
-                            <button type="button" class="btn custom-btn custom-border-btn custom-btn-bg-white" data-bs-toggle="modal" data-bs-target="#editProfileModal">
-                                Профайлыг засах
-                            </button>
+
+                        <!-- Ажилтны хувьд: Хүлээн авсан хүсэлтүүд -->
+                        <div class="requests-section" id="requestsSection" style="display: none;">
+                            <h3 class="history-title mb-4">Хүлээн авсан хүсэлтүүд</h3>
+                            <div id="requestsList"></div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Хэрэглэгчийн түүх -->
-                <div class="history-section">
-                    <h3 class="history-title mb-4">Таны илгээсэн өргөдөл, маягтууд</h3>
-                    <div id="historyList">
-                        <!-- Түүхийн жагсаалт энд динамикаар нэмэгдэнэ -->
+            <!-- Edit Profile Modal -->
+            <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editProfileModalLabel">Профайлыг засах</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="editProfileForm">
+                                <div class="mb-3">
+                                    <label for="firstName" class="form-label">Нэр</label>
+                                    <input type="text" class="form-control" id="firstName" name="first_name" value="Бат-Эрдэнэ">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="lastName" class="form-label">Овог</label>
+                                    <input type="text" class="form-control" id="lastName" name="last_name" value="Пүрэвсүрэн">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phoneNumber" class="form-label">Утасны дугаар</label>
+                                    <input type="text" class="form-control" id="phoneNumber" name="phone_number" value="+976 9912-3456">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="profileImage" class="form-label">Профайлын зураг</label>
+                                    <input type="file" class="form-control" id="profileImage" name="profile_image">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Хаах</button>
+                            <button type="button" class="btn custom-btn custom-border-btn custom-btn-bg-white" onclick="updateProfile()">Хадгалах</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Edit Profile Modal (өмнөх код хэвээрээ) -->
-    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editProfileModalLabel">Профайлыг засах</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="editProfileForm">
-                        <div class="mb-3">
-                            <label for="firstName" class="form-label">Нэр</label>
-                            <input type="text" class="form-control" id="firstName" name="first_name">
+            <!-- Comment Modal for Approve/Reject -->
+            <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="commentModalLabel">Тайлбар оруулах</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="mb-3">
-                            <label for="lastName" class="form-label">Овог</label>
-                            <input type="text" class="form-control" id="lastName" name="last_name">
+                        <div class="modal-body">
+                            <form id="commentForm">
+                                <div class="mb-3">
+                                    <label for="commentText" class="form-label">Тайлбар</label>
+                                    <textarea class="form-control" id="commentText" name="comment" rows="3" placeholder="Тайлбараа энд бичнэ үү..."></textarea>
+                                </div>
+                            </form>
                         </div>
-                        <div class="mb-3">
-                            <label for="phoneNumber" class="form-label">Утасны дугаар</label>
-                            <input type="text" class="form-control" id="phoneNumber" name="phone_number">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Хаах</button>
+                            <button type="button" class="btn btn-primary" id="confirmActionBtn">Хадгалах</button>
                         </div>
-                        <div class="mb-3">
-                            <label for="profileImage" class="form-label">Профайлын зураг</label>
-                            <input type="file" class="form-control" id="profileImage" name="profile_image">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Хаах</button>
-                    <button type="button" class="btn custom-btn custom-border-btn custom-btn-bg-white" onclick="updateProfile()">Хадгалах</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
     </main>
 
     <!-- FOOTER -->
@@ -209,16 +255,29 @@
                         </li>
                     </ul>
                     <ul class="social-icon mt-4">
-                        <li class="social-icon-item"><a href="#" class="social-icon-link"><span class="bi-twitter"></span></a></li>
-                        <li class="social-icon-item"><a href="#" class="social-icon-link"><span class="bi-facebook"></span></a></li>
-                        <li class="social-icon-item"><a href="#" class="social-icon-link"><span class="bi-instagram"></span></a></li>
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link button button--skoll">
+                                <span></span>
+                                <span class="bi-twitter"></span>
+                            </a>
+                        </li>
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link button button--skoll">
+                                <span></span>
+                                <span class="bi-facebook"></span>
+                            </a>
+                        </li>
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link button button--skoll">
+                                <span></span>
+                                <span class="bi-instagram"></span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-lg-7 col-12 text-center mx-auto">
                     <br>
-                    <p class="copyright-text mb-0 text-white-50">
-                        © 2025 NumForms. Бүх эрх хуулиар хамгаалагдсан.
-                    </p>
+                    <p class="copyright-text mb-0 text-white-50">Copyright © 2025 NumForms. Бүх эрх хуулиар хамгаалагдсан.</p>
                 </div>
             </div>
         </div>
@@ -234,5 +293,274 @@
     <script src="js/modernizr.js"></script>
     <script src="js/animated-headline.js"></script>
     <script src="js/custom.js"></script>
+
+    <!-- Inline JavaScript for dynamic history, requests, and profile update -->
+    <script>
+        // Жишээ түүхийн өгөгдөл (ирээдүйд backend-ээс татна)
+        const historyData = [
+            {
+                title: "Хичээл цуцлах өргөдөл",
+                status: "Батлагдсан",
+                date: "2025-04-17"
+            },
+            {
+                title: "Хувийн төлөвлөгөө өөрчлөх",
+                status: "Хүлээгдэж байна",
+                date: "2025-04-16"
+            },
+            {
+                title: "Сургалтын төлбөрийн буцаалт",
+                status: "Татгалзсан",
+                date: "2025-04-15"
+            }
+        ];
+
+        // Жишээ хүсэлтүүдийн өгөгдөл (Ажилтны хувьд, ирээдүйд backend-ээс татна)
+        const requestsData = [
+            {
+                title: "Хичээл цуцлах өргөдөл",
+                student: "Золжаргал",
+                studentId: "20B1NUM1234",
+                date: "2025-04-17",
+                status: "Хүлээгдэж байна",
+                attachment: "attachments/request1.pdf"
+            },
+            {
+                title: "Дүнгийн маргаан",
+                student: "Данзандорж",
+                studentId: "20B1NUM5678",
+                date: "2025-04-16",
+                status: "Хүлээгдэж байна",
+                attachment: "attachments/request2.pdf"
+            }
+        ];
+
+        // Хэрэглэгчийн төрлийг тодорхойлох функц
+        function determineUserType(email) {
+            const studentPattern = /^[0-9]{2}B1NUM[0-9]{4}@stud\.num\.edu\.mn$/i; // Case-insensitive
+            if (studentPattern.test(email)) {
+                return "student";
+            } else if (email.includes('@stud.num.edu.mn') && email.includes('.')) {
+                return "staff";
+            }
+            return "unknown";
+        }
+
+        // Түүх нэмэх функц
+        function addHistoryItem(item, index) {
+            const historyList = document.getElementById('historyList');
+            const historyItem = document.createElement('div');
+            historyItem.classList.add('history-item', 'mb-3', 'p-3', 'border', 'rounded');
+            historyItem.setAttribute('data-index', index);
+            historyItem.innerHTML = `
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="history-title-text">${item.title}</span>
+                        <span class="history-status ms-2">(${item.status})</span>
+                    </div>
+                    <small class="history-date text-muted">${item.date}</small>
+                </div>
+            `;
+            historyList.appendChild(historyItem);
+        }
+
+        // Хүсэлт нэмэх функц (Ажилтны хувьд)
+        function addRequestItem(item, index) {
+            const requestsList = document.getElementById('requestsList');
+            const requestItem = document.createElement('div');
+            requestItem.classList.add('request-item', 'mb-3', 'p-3', 'border', 'rounded');
+            requestItem.setAttribute('data-index', index);
+            requestItem.innerHTML = `
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="history-title-text">${item.title}</span>
+                        <span class="history-status ms-2">(${item.status})</span>
+                        <div class="request-student text-muted">${item.student} (${item.studentId})</div>
+                        <a href="${item.attachment}" target="_blank" class="attachment-link small">Хавсралтыг харах</a>
+                    </div>
+                    <div>
+                        <small class="history-date text-muted me-2">${item.date}</small>
+                        <button class="btn btn-sm btn-success approve-btn me-1" onclick="showCommentModal(${index}, 'approve')">Батлах</button>
+                        <button class="btn btn-sm btn-danger reject-btn" onclick="showCommentModal(${index}, 'reject')">Татгалзах</button>
+                    </div>
+                </div>
+                <div class="comment-section mt-2" style="display: none;">
+                    <strong>Тайлбар:</strong>
+                    <p class="comment-text mb-0"></p>
+                </div>
+            `;
+            requestsList.appendChild(requestItem);
+        }
+
+        // Тайлбарын modal-ыг харуулах функц
+        function showCommentModal(index, action) {
+            const modal = new bootstrap.Modal(document.getElementById('commentModal'));
+            const confirmBtn = document.getElementById('confirmActionBtn');
+            document.getElementById('commentText').value = '';
+
+            confirmBtn.onclick = function() {
+                const comment = document.getElementById('commentText').value;
+                if (action === 'approve') {
+                    approveRequest(index, comment);
+                } else {
+                    rejectRequest(index, comment);
+                }
+                modal.hide();
+            };
+
+            modal.show();
+        }
+
+        // Хүсэлтийг батлах функц
+        function approveRequest(index, comment) {
+            const requestItem = document.querySelector(`#requestsList [data-index="${index}"]`);
+            if (requestItem) {
+                const statusSpan = requestItem.querySelector('.history-status');
+                statusSpan.textContent = "(Батлагдсан)";
+                statusSpan.classList.add('text-success');
+                requestItem.querySelector('.approve-btn').style.display = 'none';
+                requestItem.querySelector('.reject-btn').style.display = 'none';
+
+                const commentSection = requestItem.querySelector('.comment-section');
+                const commentText = requestItem.querySelector('.comment-text');
+                commentText.textContent = comment || "Тайлбар байхгүй";
+                commentSection.style.display = 'block';
+            }
+        }
+
+        // Хүсэлтийг татгалзах функц
+        function rejectRequest(index, comment) {
+            const requestItem = document.querySelector(`#requestsList [data-index="${index}"]`);
+            if (requestItem) {
+                const statusSpan = requestItem.querySelector('.history-status');
+                statusSpan.textContent = "(Татгалзсан)";
+                statusSpan.classList.add('text-danger');
+                requestItem.querySelector('.approve-btn').style.display = 'none';
+                requestItem.querySelector('.reject-btn').style.display = 'none';
+
+                const commentSection = requestItem.querySelector('.comment-section');
+                const commentText = requestItem.querySelector('.comment-text');
+                commentText.textContent = comment || "Тайлбар байхгүй";
+                commentSection.style.display = 'block';
+            }
+        }
+
+        // Профайлын мэдээлэл
+        let profileData = {
+            firstName: "Бат-Эрдэнэ",
+            lastName: "Пүрэвсүрэн",
+            email: "Purevsuren.BatErdene@stud.num.edu.mn",
+            phone: "+976 9912-3456",
+            userType: "Оюутан",
+            userId: "20B1NUM1799",
+            school: "МТЭС",
+            program: "Мэдээллийн технологи",
+            position: "Багш",
+            department: "Мэдээллийн Технологийн Хэлтэс",
+            regDate: "2025-01-15",
+            image: "images/teams/male1.jpg"
+        };
+
+        // Профайлыг шинэчлэх функц
+        function updateProfile() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const profileImageInput = document.getElementById('profileImage');
+            
+            profileData.firstName = firstName;
+            profileData.lastName = lastName;
+            profileData.phone = phoneNumber;
+
+            if (profileImageInput.files && profileImageInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    profileData.image = e.target.result;
+                    document.getElementById('profileImageDisplay').src = profileData.image;
+                };
+                reader.readAsDataURL(profileImageInput.files[0]);
+            }
+
+            document.getElementById('profileName').textContent = profileData.firstName;
+            document.getElementById('profileLastName').textContent = profileData.lastName;
+            document.getElementById('profilePhone').textContent = profileData.phone;
+            document.getElementById('profileEmail').textContent = profileData.email;
+            document.getElementById('profileUserType').textContent = profileData.userType;
+            document.getElementById('profileId').textContent = profileData.userId;
+            if (profileData.userType === "Оюутан") {
+                document.getElementById('profileSchool').textContent = profileData.school;
+                document.getElementById('profileProgram').textContent = profileData.program;
+            } else {
+                document.getElementById('profilePosition').textContent = profileData.position;
+                document.getElementById('profileDepartment').textContent = profileData.department;
+            }
+            document.getElementById('profileRegDate').textContent = profileData.regDate;
+
+            const modal = bootstrap.Modal.getInstance(document.getElementById('editProfileModal'));
+            modal.hide();
+        }
+
+        // Хуудас ачааллахдаа
+        document.addEventListener('DOMContentLoaded', function() {
+            // Хэрэглэгчийн төрлийг тодорхойлох
+            const userType = determineUserType(profileData.email);
+            profileData.userType = userType === "student" ? "Оюутан" : "Ажилтан";
+            profileData.userId = userType === "student" ? "20B1NUM1799" : "STF12345";
+
+            // Логикийг баталгаажуулахын тулд консолд хэвлэх
+            console.log("User Type:", userType);
+            console.log("Profile Email:", profileData.email);
+
+            // Профайлын талбаруудыг тохируулах
+            if (userType === "student") {
+                document.getElementById('studentFields').style.display = 'block';
+                document.getElementById('staffFields').style.display = 'none';
+                document.getElementById('idLabel').textContent = 'Оюутны ID:';
+            } else if (userType === "staff") {
+                document.getElementById('studentFields').style.display = 'none';
+                document.getElementById('staffFields').style.display = 'block';
+                document.getElementById('idLabel').textContent = 'Ажилтны ID:';
+            } else {
+                console.error("Unknown user type:", userType);
+            }
+
+            // Түүхийн жагсаалтыг зөвхөн оюутанд харуулах
+            if (userType === "student") {
+                document.getElementById('historySection').style.display = 'block';
+                historyData.forEach((item, index) => {
+                    addHistoryItem(item, index);
+                });
+            } else {
+                document.getElementById('historySection').style.display = 'none';
+            }
+
+            // Хүлээн авсан хүсэлтүүдийг зөвхөн ажилтанд харуулах
+            if (userType === "staff") {
+                document.getElementById('requestsSection').style.display = 'block';
+                requestsData.forEach((item, index) => {
+                    addRequestItem(item, index);
+                });
+            } else {
+                document.getElementById('requestsSection').style.display = 'none';
+            }
+
+            // Анхны профайлын мэдээллийг харуулах
+            document.getElementById('profileName').textContent = profileData.firstName;
+            document.getElementById('profileLastName').textContent = profileData.lastName;
+            document.getElementById('profilePhone').textContent = profileData.phone;
+            document.getElementById('profileEmail').textContent = profileData.email;
+            document.getElementById('profileUserType').textContent = profileData.userType;
+            document.getElementById('profileId').textContent = profileData.userId;
+            if (userType === "student") {
+                document.getElementById('profileSchool').textContent = profileData.school;
+                document.getElementById('profileProgram').textContent = profileData.program;
+            } else {
+                document.getElementById('profilePosition').textContent = profileData.position;
+                document.getElementById('profileDepartment').textContent = profileData.department;
+            }
+            document.getElementById('profileRegDate').textContent = profileData.regDate;
+            document.getElementById('profileImageDisplay').src = profileData.image;
+        });
+    </script>
 </body>
 </html>
