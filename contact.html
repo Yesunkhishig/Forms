@@ -1,36 +1,26 @@
 <!doctype html>
-<html lang="en">
+<html lang="mn">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <meta name="description" content="">
+        <meta name="description" content="МУИС-МТЭС-ийн ажилчдын хаяг, холбоо барих мэдээлэл">
         <meta name="author" content="">
-
-        <title>Contact | Bootstrap 5 Theme</title>
+        <title>NumForms - Ажилчдын хаяг</title>
 
         <!-- CSS FILES -->        
         <link rel="preconnect" href="https://fonts.googleapis.com">
-        
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-
         <link href="css/bootstrap.min.css" rel="stylesheet">
-
         <link href="css/bootstrap-icons.css" rel="stylesheet">
-
         <link href="css/tooplate-clean-work.css" rel="stylesheet">
-
     </head>
     
     <body>
-
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="images/logo.png" class="logo img-fluid" alt="">
-
+                    <img src="images/logo.png" class="logo img-fluid" alt="NumForms Logo">
                     <span class="ms-2">NumForms</span>
                 </a>
 
@@ -43,29 +33,22 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">Нүүр</a>
                         </li>
-
-                        
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Маягт</a>
-                            
-                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                            <a class="nav-link dropdown-toggle" href="#section_5" id="formsDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Маягт</a>
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="formsDropdownMenuLink">
                                 <li><a class="dropdown-item" href="services.html">Өргөдөл</a></li>
-                                
                                 <li><a class="dropdown-item" href="coming-soon.html">Маягт</a></li>
-                                
                             </ul>
                         </li>
-                        
                         <li class="nav-item">
                             <a class="nav-link active" href="contact.html">Ажилчдын хаяг</a>
                         </li>
-                        
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">Бидний тухай</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="notification.html">
-                                <i class="bi bi-bell-fill"></i> <span class="badge bg-warning">3</span>
+                                <i class="bi bi-bell-fill"></i> <span class="badge bg-warning" id="notificationBadge">3</span>
                             </a>
                         </li>
                         <li class="nav-item ms-3">
@@ -79,39 +62,32 @@
         </nav>
 
         <main>
-
             <section class="banner-section d-flex justify-content-center align-items-end">
                 <div class="section-overlay"></div>
-
                 <div class="container">
                     <div class="row">
-
                         <div class="col-lg-7 col-12">
                             <h1 class="text-white mb-lg-0">Ажилчдын хаяг</h1>
                         </div>
-
                         <div class="col-lg-4 col-12 d-flex justify-content-lg-end align-items-center ms-auto">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb justify-content-center">
                                     <li class="breadcrumb-item"><a href="index.html">Нүүр</a></li>
-
-                                    <li class="breadcrumb-item active" aria-current="page">Холбоо барих мэдээлэл</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Ажилчдын хаяг</li>
                                 </ol>
                             </nav>
                         </div>
-
                     </div>
                 </div>
             </section>
-         
 
             <section class="team-section section-padding section-bg">
                 <div class="container">
                     <div class="row">
-                        <h2 class="my-3">МУИС-МТЭС</h2>
-            
-                        <h6>Өргөдөл болон маягтуудыг шийдвэрлэх ажилчдын суух өрөө болон харилцах цахим шуудангийн мэдээллийг энэ хэсгээс харна уу.</h6>
-            
+                        <div class="col-12">
+                            <h6 style="color: #4f83d1;">Өргөдөл болон маягтуудыг шийдвэрлэх ажилчдын суух өрөө болон харилцах цахим шуудангийн мэдээллийг энэ хэсгээс харна уу.</h6>
+                        </div>
+
                         <div class="col-lg-3 col-12 mb-4">
                             <div class="contact-info bg-white shadow-lg" style="padding: 15px; min-height: 220px; display: flex; flex-direction: column; overflow: hidden;">
                                 <h3 class="mb-3" style="font-size: 1.1rem; overflow-wrap: break-word;">Эргэн суралцах хүсэлт</h3>
@@ -122,316 +98,234 @@
                                     <i class="bi-geo-alt-fill custom-icon me-2"></i>
                                     (БОХТ - байр) - 306 тоот
                                 </h5>
-            
                                 <h5 class="d-flex mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-telephone-fill custom-icon me-2"></i>
-                                    <a href="tel: 99-999-999">
-                                        99-999-999
-                                    </a>
+                                    <a href="tel: 99-999-999">99-999-999</a>
                                 </h5>
                                 <h5 class="d-flex" style="font-size: 0.9rem; margin-top: auto;">
                                     <i class="bi-envelope-fill custom-icon me-2"></i>
-                                    <a href="mailto:info@stud.num.edu.mn">
-                                        <p style="font-size: 0.9rem; margin: 0;">
-                                            shagdar_solongo@stud.num.edu.mn
-                                        </p>
+                                    <a href="mailto:shagdar_solongo@stud.num.edu.mn">
+                                        <p style="font-size: 0.9rem; margin: 0;">shagdar_solongo@stud.num.edu.mn</p>
                                     </a>
                                 </h5>
                             </div>
                         </div>
-            
+
                         <div class="col-lg-3 col-12 mb-4">
                             <div class="contact-info bg-white shadow-lg" style="padding: 15px; min-height: 220px; display: flex; flex-direction: column; overflow: hidden;">
                                 <h3 class="mb-3" style="font-size: 1.1rem; overflow-wrap: break-word;">Суралцагчид чөлөө олгох</h3>
-            
                                 <h5 class="d-flex mt-2 mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-geo-alt-fill custom-icon me-2"></i>
                                     МУИС-7-р байр: 201
                                 </h5>
-            
                                 <h5 class="d-flex mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-telephone-fill custom-icon me-2"></i>
-                                    <a href="tel: 99-999-999">
-                                        99-999-999
-                                    </a>
+                                    <a href="tel: 99-999-999">99-999-999</a>
                                 </h5>
-            
                                 <h5 class="d-flex" style="font-size: 0.9rem; margin-top: auto;">
                                     <i class="bi-envelope-fill custom-icon me-2"></i>
                                     <a href="mailto:info@stud.num.edu.mn">
-                                        <p style="font-size: 0.9rem; margin: 0;">
-                                            info@stud.num.edu.mn
-                                        </p>
+                                        <p style="font-size: 0.9rem; margin: 0;">info@stud.num.edu.mn</p>
                                     </a>
                                 </h5>
                             </div>
                         </div>
-            
+
                         <div class="col-lg-3 col-12 mb-4">
                             <div class="contact-info bg-white shadow-lg" style="padding: 15px; min-height: 220px; display: flex; flex-direction: column; overflow: hidden;">
                                 <h3 class="mb-3" style="font-size: 1.1rem; overflow-wrap: break-word;">Хувийн төлөвлөгөөний маягт</h3>
-            
                                 <h5 class="d-flex mt-2 mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-geo-alt-fill custom-icon me-2"></i>
                                     МУИС-7-р байр: 201
                                 </h5>
-            
                                 <h5 class="d-flex mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-telephone-fill custom-icon me-2"></i>
-                                    <a href="tel: 99-999-999">
-                                        99-999-999
-                                    </a>
+                                    <a href="tel: 99-999-999">99-999-999</a>
                                 </h5>
-            
                                 <h5 class="d-flex" style="font-size: 0.9rem; margin-top: auto;">
                                     <i class="bi-envelope-fill custom-icon me-2"></i>
                                     <a href="mailto:info@stud.num.edu.mn">
-                                        <p style="font-size: 0.9rem; margin: 0;">
-                                            info@stud.num.edu.mn
-                                        </p>
+                                        <p style="font-size: 0.9rem; margin: 0;">info@stud.num.edu.mn</p>
                                     </a>
                                 </h5>
                             </div>
                         </div>
-            
+
                         <div class="col-lg-3 col-12 mb-4">
                             <div class="contact-info bg-white shadow-lg" style="padding: 15px; min-height: 220px; display: flex; flex-direction: column; overflow: hidden;">
                                 <h3 class="mb-3" style="font-size: 1.1rem; overflow-wrap: break-word;">R үнэлгээний хүсэлт гаргах маягт</h3>
-            
                                 <h5 class="d-flex mt-2 mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-geo-alt-fill custom-icon me-2"></i>
                                     МУИС-7-р байр: 201
                                 </h5>
-            
                                 <h5 class="d-flex mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-telephone-fill custom-icon me-2"></i>
-                                    <a href="tel: 99-999-999">
-                                        99-999-999
-                                    </a>
+                                    <a href="tel: 99-999-999">99-999-999</a>
                                 </h5>
-            
                                 <h5 class="d-flex" style="font-size: 0.9rem; margin-top: auto;">
                                     <i class="bi-envelope-fill custom-icon me-2"></i>
                                     <a href="mailto:info@stud.num.edu.mn">
-                                        <p style="font-size: 0.9rem; margin: 0;">
-                                            info@stud.num.edu.mn
-                                        </p>
+                                        <p style="font-size: 0.9rem; margin: 0;">info@stud.num.edu.mn</p>
                                     </a>
                                 </h5>
                             </div>
                         </div>
-            
+
                         <div class="col-lg-3 col-12 mb-4">
                             <div class="contact-info bg-white shadow-lg" style="padding: 15px; min-height: 220px; display: flex; flex-direction: column; overflow: hidden;">
                                 <h3 class="mb-3" style="font-size: 1.1rem; overflow-wrap: break-word;">Дүнгийн маргаан, гомдол барагдуулах маягт</h3>
-            
                                 <h5 class="d-flex mt-2 mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-geo-alt-fill custom-icon me-2"></i>
                                     МУИС-7-р байр: 201
                                 </h5>
-            
                                 <h5 class="d-flex mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-telephone-fill custom-icon me-2"></i>
-                                    <a href="tel: 99-999-999">
-                                        99-999-999
-                                    </a>
+                                    <a href="tel: 99-999-999">99-999-999</a>
                                 </h5>
-            
                                 <h5 class="d-flex" style="font-size: 0.9rem; margin-top: auto;">
                                     <i class="bi-envelope-fill custom-icon me-2"></i>
-                                    <a href="mailto:info@stud.num.edu.mn">
-                                        <p style="font-size: 0.9rem; margin: 0;">
-                                            enkhtuya_baldan@stud.num.edu.mn
-                                        </p>
+                                    <a href="mailto:enkhtuya_baldan@stud.num.edu.mn">
+                                        <p style="font-size: 0.9rem; margin: 0;">enkhtuya_baldan@stud.num.edu.mn</p>
                                     </a>
                                 </h5>
                             </div>
                         </div>
-            
+
                         <div class="col-lg-3 col-12 mb-4">
                             <div class="contact-info bg-white shadow-lg" style="padding: 15px; min-height: 220px; display: flex; flex-direction: column; overflow: hidden;">
                                 <h3 class="mb-3" style="font-size: 1.1rem; overflow-wrap: break-word;">Хожимдсон бүртгэл хийлгэх маягт</h3>
-            
                                 <h5 class="d-flex mt-2 mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-geo-alt-fill custom-icon me-2"></i>
                                     МУИС-7-р байр: 201
                                 </h5>
-            
                                 <h5 class="d-flex mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-telephone-fill custom-icon me-2"></i>
-                                    <a href="tel: 99-999-999">
-                                        99-999-999
-                                    </a>
+                                    <a href="tel: 99-999-999">99-999-999</a>
                                 </h5>
-            
                                 <h5 class="d-flex" style="font-size: 0.9rem; margin-top: auto;">
                                     <i class="bi-envelope-fill custom-icon me-2"></i>
                                     <a href="mailto:info@stud.num.edu.mn">
-                                        <p style="font-size: 0.9rem; margin: 0;">
-                                            info@stud.num.edu.mn
-                                        </p>
+                                        <p style="font-size: 0.9rem; margin: 0;">info@stud.num.edu.mn</p>
                                     </a>
                                 </h5>
                             </div>
                         </div>
-            
+
                         <div class="col-lg-3 col-12 mb-4">
                             <div class="contact-info bg-white shadow-lg" style="padding: 15px; min-height: 220px; display: flex; flex-direction: column; overflow: hidden;">
                                 <h3 class="mb-3" style="font-size: 1.1rem; overflow-wrap: break-word;">Чөлөөт сонголтын хичээл нэмүүлэх маягт</h3>
-            
                                 <h5 class="d-flex mt-2 mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-geo-alt-fill custom-icon me-2"></i>
                                     МУИС-7-р байр: 201
                                 </h5>
-            
                                 <h5 class="d-flex mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-telephone-fill custom-icon me-2"></i>
-                                    <a href="tel: 99-999-999">
-                                        99-999-999
-                                    </a>
+                                    <a href="tel: 99-999-999">99-999-999</a>
                                 </h5>
-            
                                 <h5 class="d-flex" style="font-size: 0.9rem; margin-top: auto;">
                                     <i class="bi-envelope-fill custom-icon me-2"></i>
-                                    <a href="mailto:info@stud.num.edu.mn">
-                                        <p style="font-size: 0.9rem; margin: 0;">
-                                            ganbat_bars@stud.num.edu.mn
-                                        </p>
+                                    <a href="mailto:ganbat_bars@stud.num.edu.mn">
+                                        <p style="font-size: 0.9rem; margin: 0;">ganbat_bars@stud.num.edu.mn</p>
                                     </a>
                                 </h5>
                             </div>
                         </div>
-            
+
                         <div class="col-lg-3 col-12 mb-4">
                             <div class="contact-info bg-white shadow-lg" style="padding: 15px; min-height: 220px; display: flex; flex-direction: column; overflow: hidden;">
                                 <h3 class="mb-3" style="font-size: 1.1rem; overflow-wrap: break-word;">Хичээл цуцлуулах маягт</h3>
-            
                                 <h5 class="d-flex mt-2 mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-geo-alt-fill custom-icon me-2"></i>
                                     МУИС-7-р байр: 201
                                 </h5>
-            
                                 <h5 class="d-flex mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-telephone-fill custom-icon me-2"></i>
-                                    <a href="tel: 99-999-999">
-                                        99-999-999
-                                    </a>
+                                    <a href="tel: 99-999-999">99-999-999</a>
                                 </h5>
-            
                                 <h5 class="d-flex" style="font-size: 0.9rem; margin-top: auto;">
                                     <i class="bi-envelope-fill custom-icon me-2"></i>
                                     <a href="mailto:info@stud.num.edu.mn">
-                                        <p style="font-size: 0.9rem; margin: 0;">
-                                            info@stud.num.edu.mn
-                                        </p>
+                                        <p style="font-size: 0.9rem; margin: 0;">info@stud.num.edu.mn</p>
                                     </a>
                                 </h5>
                             </div>
                         </div>
-            
+
                         <div class="col-lg-3 col-12 mb-4">
                             <div class="contact-info bg-white shadow-lg" style="padding: 15px; min-height: 220px; display: flex; flex-direction: column; overflow: hidden;">
                                 <h3 class="mb-3" style="font-size: 1.1rem; overflow-wrap: break-word;">Хавсрага хөтөлбөрийн маягт</h3>
-            
                                 <h5 class="d-flex mt-2 mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-geo-alt-fill custom-icon me-2"></i>
                                     МУИС-7-р байр: 201
                                 </h5>
-            
                                 <h5 class="d-flex mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-telephone-fill custom-icon me-2"></i>
-                                    <a href="tel: 99-999-999">
-                                        99-999-999
-                                    </a>
+                                    <a href="tel: 99-999-999">99-999-999</a>
                                 </h5>
-            
                                 <h5 class="d-flex" style="font-size: 0.9rem; margin-top: auto;">
                                     <i class="bi-envelope-fill custom-icon me-2"></i>
                                     <a href="mailto:info@stud.num.edu.mn">
-                                        <p style="font-size: 0.9rem; margin: 0;">
-                                            info@stud.num.edu.mn
-                                        </p>
+                                        <p style="font-size: 0.9rem; margin: 0;">info@stud.num.edu.mn</p>
                                     </a>
                                 </h5>
                             </div>
                         </div>
-            
+
                         <div class="col-lg-3 col-12 mb-4">
                             <div class="contact-info bg-white shadow-lg" style="padding: 15px; min-height: 220px; display: flex; flex-direction: column; overflow: hidden;">
                                 <h3 class="mb-3" style="font-size: 1.1rem; overflow-wrap: break-word;">Чөлөөт сонголтын хичээл шилжүүлэх маягт</h3>
-            
                                 <h5 class="d-flex mt-2 mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-geo-alt-fill custom-icon me-2"></i>
                                     МУИС-7-р байр: 201
                                 </h5>
-            
                                 <h5 class="d-flex mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-telephone-fill custom-icon me-2"></i>
-                                    <a href="tel: 99-999-999">
-                                        99-999-999
-                                    </a>
+                                    <a href="tel: 99-999-999">99-999-999</a>
                                 </h5>
-            
                                 <h5 class="d-flex" style="font-size: 0.9rem; margin-top: auto;">
                                     <i class="bi-envelope-fill custom-icon me-2"></i>
-                                    <a href="mailto:info@stud.num.edu.mn">
-                                        <p style="font-size: 0.9rem; margin: 0;">
-                                            ts_enkhtaivan@stud.num.edu.mn
-                                        </p>
+                                    <a href="mailto:ts_enkhtaivan@stud.num.edu.mn">
+                                        <p style="font-size: 0.9rem; margin: 0;">ts_enkhtaivan@stud.num.edu.mn</p>
                                     </a>
                                 </h5>
                             </div>
                         </div>
-            
+
                         <div class="col-lg-3 col-12 mb-4">
                             <div class="contact-info bg-white shadow-lg" style="padding: 15px; min-height: 220px; display: flex; flex-direction: column; overflow: hidden;">
                                 <h3 class="mb-3" style="font-size: 1.1rem; overflow-wrap: break-word;">Байрнаас гарах хүсэлтийн маягт</h3>
-            
                                 <h5 class="d-flex mt-2 mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-geo-alt-fill custom-icon me-2"></i>
                                     МУИС-7-р байр: 201
                                 </h5>
-            
                                 <h5 class="d-flex mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-telephone-fill custom-icon me-2"></i>
-                                    <a href="tel: 99-999-999">
-                                        99-999-999
-                                    </a>
+                                    <a href="tel: 99-999-999">99-999-999</a>
                                 </h5>
-            
                                 <h5 class="d-flex" style="font-size: 0.9rem; margin-top: auto;">
                                     <i class="bi-envelope-fill custom-icon me-2"></i>
-                                    <a href="mailto:info@stud.num.edu.mn">
-                                        <p style="font-size: 0.9rem; margin: 0;">
-                                            d_battulga@stud.num.edu.mn
-                                        </p>
+                                    <a href="mailto:d_battulga@stud.num.edu.mn">
+                                        <p style="font-size: 0.9rem; margin: 0;">d_battulga@stud.num.edu.mn</p>
                                     </a>
                                 </h5>
                             </div>
                         </div>
-            
+
                         <div class="col-lg-3 col-12 mb-4">
                             <div class="contact-info bg-white shadow-lg" style="padding: 15px; min-height: 220px; display: flex; flex-direction: column; overflow: hidden;">
                                 <h3 class="mb-3" style="font-size: 1.1rem; overflow-wrap: break-word;">Сургуулиас хасагдах хүсэлтийн маягт</h3>
-            
                                 <h5 class="d-flex mt-2 mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-geo-alt-fill custom-icon me-2"></i>
                                     МУИС-7-р байр: 201
                                 </h5>
-            
                                 <h5 class="d-flex mb-2" style="font-size: 0.9rem;">
                                     <i class="bi-telephone-fill custom-icon me-2"></i>
-                                    <a href="tel: 99-999-999">
-                                        99-999-999
-                                    </a>
+                                    <a href="tel: 99-999-999">99-999-999</a>
                                 </h5>
-            
                                 <h5 class="d-flex" style="font-size: 0.9rem; margin-top: auto;">
                                     <i class="bi-envelope-fill custom-icon me-2"></i>
                                     <a href="mailto:info@stud.num.edu.mn">
-                                        <p style="font-size: 0.9rem; margin: 0;">
-                                            info@stud.num.edu.mn
-                                        </p>
+                                        <p style="font-size: 0.9rem; margin: 0;">info@stud.num.edu.mn</p>
                                     </a>
                                 </h5>
                             </div>
@@ -447,7 +341,7 @@
                     <div class="col-lg-7 col-12 text-center mx-auto">
                         <h5 class="site-footer-title mb-3 fw-bold text-white">Холбоо барих</h5>
                         <ul class="social-icon list-unstyled mb-2">
-                            <li class="footer-menu-item mb-2">
+                            <li class="footer-contact-item mb-2">
                                 <p class="text-white d-flex align-items-center justify-content-center mb-0">
                                     <i class="bi-telephone-fill me-2"></i>
                                     <a href="tel:99999999" class="site-footer-link text-white text-decoration-none">
@@ -455,7 +349,7 @@
                                     </a>
                                 </p>
                             </li>
-                            <li class="footer-menu-item">
+                            <li class="footer-contact-item">
                                 <p class="text-white d-flex align-items-center justify-content-center mb-0">
                                     <i class="bi-envelope-fill me-2"></i>
                                     <a href="mailto:20b1num1799@stud.num.edu.mn" class="site-footer-link text-white text-decoration-none">
@@ -471,14 +365,12 @@
                                     <span class="bi-twitter"></span>
                                 </a>
                             </li>
-
                             <li class="social-icon-item">
                                 <a href="#" class="social-icon-link button button--skoll">
                                     <span></span>
                                     <span class="bi-facebook"></span>
                                 </a>
                             </li>
-
                             <li class="social-icon-item">
                                 <a href="#" class="social-icon-link button button--skoll">
                                     <span></span>
@@ -486,9 +378,7 @@
                                 </a>
                             </li>
                         </ul>
-
                     </div>
-                    
                     <div class="col-lg-7 col-12 text-center mx-auto">
                         <br>
                         <p class="copyright-text mb-0 text-white-50">Copyright © 2025 NumForms. Бүх эрх хуулиар хамгаалагдсан.</p>
@@ -496,6 +386,7 @@
                 </div>
             </div>
         </footer>
+
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -506,6 +397,5 @@
         <script src="js/modernizr.js"></script>
         <script src="js/animated-headline.js"></script>
         <script src="js/custom.js"></script>
-
     </body>
 </html>

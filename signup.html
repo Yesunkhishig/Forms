@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="NumForms Signup Page">
+        <meta name="description" content="NumForms - Бүртгүүлэх хуудас">
         <meta name="author" content="">
         <title>NumForms - Бүртгүүлэх</title>
 
@@ -14,63 +14,36 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-icons.css" rel="stylesheet">
         <link href="css/tooplate-clean-work.css" rel="stylesheet">
-
-        <style>
-            .custom-form .form-control, .custom-form .form-select {
-                height: 38px;
-                font-size: 14px;
-            }
-            .custom-form label {
-                font-size: 14px;
-                margin-bottom: 0.2rem;
-            }
-            .custom-form .mb-3 {
-                margin-bottom: 0.75rem !important;
-            }
-            .custom-form .form-check {
-                margin-bottom: 1rem;
-            }
-            .custom-form .d-grid .custom-btn {
-                padding: 8px;
-                font-size: 14px;
-            }
-            .custom-form p.text-center {
-                font-size: 14px;
-                margin-top: 0.5rem;
-            }
-            .contact-form {
-                padding: 20px;
-                background: rgba(255, 255, 255, 0.95);
-                border-radius: 8px;
-            }
-            .hero-section {
-                padding: 50px 0;
-            }
-        </style>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="images/logo.png" class="logo img-fluid" alt="">
+                    <img src="images/logo.png" class="logo img-fluid" alt="NumForms Logo">
                     <span class="ms-2">NumForms</span>
                 </a>
-                
-                <!-- <h2 class="text-center rotate-1 text-white mb-4 pb-2">Бүртгүүлэх</h2> -->
                 <div class="custom-close-button text-end">
-                    <a href="index.html" class="btn-close btn-close-white" aria-label="Close" color="white"></a>
+                    <a href="index.html" class="btn-close btn-close-white" aria-label="Close"></a>
                 </div> 
             </div>
         </nav>
 
         <main>
-            <section class="hero-section d-flex justify-content-center align-items-center">
-                <div class="section-overlay"></div>
+            <section class="signup-section">
                 <div class="container">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center align-items-center signup-container">
                         <div class="col-lg-6 col-12">
-                            <div class="contact-form">
+                            <h2 class="text-center headline mb-4 pb-2">Бүртгүүлэх</h2>
+                            <div class="contact-form signup-form">
                                 <form class="custom-form" action="#" method="post">
+                                    <div class="mb-3">
+                                        <label for="userType" class="form-label">Таны төрөл</label>
+                                        <select class="form-select" id="userType" name="userType" required onchange="toggleUserFields()">
+                                            <option value="" disabled selected>Сонгоно уу</option>
+                                            <option value="student">Оюутан</option>
+                                            <option value="staff">Ажилтан</option>
+                                        </select>
+                                    </div>
                                     <div class="row mb-3">
                                         <div class="col-md-6">
                                             <label for="lastname" class="form-label">Овог</label>
@@ -81,39 +54,75 @@
                                             <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Таны нэр" required>
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <div class="col-md-6">
-                                            <label for="school" class="form-label">Бүрэлдэхүүн сургууль</label>
-                                            <select class="form-select" id="school" name="school" required>
-                                                <option value="" disabled selected>Сонгоно уу</option>
-                                                <option value="ШУС">ШУС</option>
-                                                <option value="МТЭС">МТЭС</option>
-                                                <option value="ИТС">ИТС</option>
-                                            </select>
+
+                                    <!-- Оюутны талбарууд -->
+                                    <div id="studentFields" style="display: none;">
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label for="school" class="form-label">Бүрэлдэхүүн сургууль</label>
+                                                <select class="form-select" id="school" name="school">
+                                                    <option value="" disabled selected>Сонгоно уу</option>
+                                                    <option value="ШУС">ШУС</option>
+                                                    <option value="МТЭС">МТЭС</option>
+                                                    <option value="ИТС">ИТС</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="program" class="form-label">Хөтөлбөр</label>
+                                                <select class="form-select" id="program" name="program">
+                                                    <option value="" disabled selected>Сонгоно уу</option>
+                                                    <option value="it">Мэдээллийн технологи</option>
+                                                    <option value="softw">Программ хангамж</option>
+                                                    <option value="is">Мэдээллийн систем</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <label for="program" class="form-label">Хөтөлбөр</label>
-                                            <select class="form-select" id="program" name="program" required>
-                                                <option value="" disabled selected>Сонгоно уу</option>
-                                                <option value="it">Мэдээллийн технологи</option>
-                                                <option value="softw">Программ хангамж</option>
-                                                <option value="is">Мэдээллийн систем</option>
-                                            </select>
+                                        <div class="mb-3">
+                                            <label for="studentid" class="form-label">Оюутны ID</label>
+                                            <input type="text" class="form-control" id="studentid" name="studentid" placeholder="Жишээ: 20B1NUM1234">
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <div class="col-md-6">
-                                            <label for="phone" class="form-label">Утасны дугаар</label>
-                                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Жишээ: 99119911" required>
+
+                                    <!-- Ажилтны талбарууд -->
+                                    <div id="staffFields" style="display: none;">
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label for="school" class="form-label">Бүрэлдэхүүн сургууль</label>
+                                                <select class="form-select" id="staffSchool" name="staffSchool">
+                                                    <option value="" disabled selected>Сонгоно уу</option>
+                                                    <option value="ШУС">ШУС</option>
+                                                    <option value="МТЭС">МТЭС</option>
+                                                    <option value="ИТС">ИТС</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="department" class="form-label">Тэнхим</label>
+                                                <input type="text" class="form-control" id="department" name="department" placeholder="Таны алба/тэнхим">
+                                            </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <label for="studentid" class="form-label">Оюутны ID</label>
-                                            <input type="text" class="form-control" id="studentid" name="studentid" placeholder="Жишээ: 20B1NUM1234" required>
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label for="position" class="form-label">Албан тушаал</label>
+                                                <input type="text" class="form-control" id="position" name="position" placeholder="Таны албан тушаал">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="room" class="form-label">Суудаг өрөө</label>
+                                                <input type="text" class="form-control" id="room" name="room" placeholder="Жишээ: 301">
+                                            </div>
                                         </div>
+                                        <div class="mb-3">
+                                            <label for="staffid" class="form-label">Ажилтны ID</label>
+                                            <input type="text" class="form-control" id="staffid" name="staffid" placeholder="Жишээ: STAFF1234">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label">Утасны дугаар</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Жишээ: 99119911" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="email" class="form-label">И-мэйл хаяг</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="studentID@stud.num.edu.mn" required>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Таны имэйл хаяг" required>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-md-6">
@@ -126,7 +135,7 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="terms" required>
+                                        <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
                                         <label class="form-check-label" for="terms">Би <a href="#" class="link">үйлчилгээний нөхцөл</a>-ийг зөвшөөрч байна</label>
                                     </div>
                                     <div class="d-grid">
@@ -149,7 +158,7 @@
                     <div class="col-lg-7 col-12 text-center mx-auto">
                         <h5 class="site-footer-title mb-3 fw-bold text-white">Холбоо барих</h5>
                         <ul class="social-icon list-unstyled mb-2">
-                            <li class="footer-menu-item mb-2">
+                            <li class="footer-menu-item footer-contact-item mb-2">
                                 <p class="text-white d-flex align-items-center justify-content-center mb-0">
                                     <i class="bi-telephone-fill me-2"></i>
                                     <a href="tel:99999999" class="site-footer-link text-white text-decoration-none">
@@ -157,7 +166,7 @@
                                     </a>
                                 </p>
                             </li>
-                            <li class="footer-menu-item">
+                            <li class="footer-menu-item footer-contact-item">
                                 <p class="text-white d-flex align-items-center justify-content-center mb-0">
                                     <i class="bi-envelope-fill me-2"></i>
                                     <a href="mailto:20b1num1799@stud.num.edu.mn" class="site-footer-link text-white text-decoration-none">
@@ -205,5 +214,27 @@
         <script src="js/modernizr.js"></script>
         <script src="js/animated-headline.js"></script>
         <script src="js/custom.js"></script>
+
+        <!-- Inline JavaScript for toggling fields -->
+        <script>
+            function toggleUserFields() {
+                const userType = document.getElementById('userType').value;
+                const studentFields = document.getElementById('studentFields');
+                const staffFields = document.getElementById('staffFields');
+
+                studentFields.style.display = userType === 'student' ? 'block' : 'none';
+                staffFields.style.display = userType === 'staff' ? 'block' : 'none';
+
+                // Оюутны талбаруудыг шаардлагагүй болгох/шаардлагатай болгох
+                studentFields.querySelectorAll('select, input').forEach(field => {
+                    field.required = userType === 'student';
+                });
+
+                // Ажилтны талбаруудыг шаардлагагүй болгох/шаардлагатай болгох
+                staffFields.querySelectorAll('select, input').forEach(field => {
+                    field.required = userType === 'staff';
+                });
+            }
+        </script>
     </body>
 </html>
